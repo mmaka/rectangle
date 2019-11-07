@@ -8,7 +8,7 @@ else()
 endif()
 
 add_executable(intro main.cpp)
-target_compile_features(intro PRIVATE cxx_std_17)
+target_compile_features(intro PRIVATE cxx_std_14)
 
 enable_testing()
 add_executable(tester tester.cpp)
@@ -22,6 +22,5 @@ externalproject_add(Nana
 		    INSTALL_COMMAND "")
 
 externalproject_get_property(Nana SOURCE_DIR BINARY_DIR)
-#add_executable(test_nana nana/main.cpp)
 target_include_directories(intro PRIVATE ${SOURCE_DIR}/include)
 target_link_libraries(intro PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
