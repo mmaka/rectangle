@@ -23,6 +23,6 @@ externalproject_add(Nana
 		    INSTALL_COMMAND "")
 
 externalproject_get_property(Nana SOURCE_DIR BINARY_DIR)
-add_executable(test_nana nana/main.cpp)
-target_include_directories(test_nana PRIVATE ${SOURCE_DIR}/include)
-target_link_libraries(test_nana PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
+#add_executable(test_nana nana/main.cpp)
+target_include_directories(tester PRIVATE ${SOURCE_DIR}/include)
+target_link_libraries(tester PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
