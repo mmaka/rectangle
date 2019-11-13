@@ -7,6 +7,7 @@ else()
 	add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+set (cmake_configuration_types "debug")
 add_executable(intro main.cpp)
 target_compile_features(intro PRIVATE cxx_std_14)
 
@@ -22,5 +23,5 @@ externalproject_add(Nana
 		    INSTALL_COMMAND "")
 
 externalproject_get_property(Nana SOURCE_DIR BINARY_DIR)
-target_include_directories(intro PRIVATE ${SOURCE_DIR}/include)
-target_link_libraries(intro PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
+target_include_directories(tester PRIVATE ${SOURCE_DIR}/include)
+target_link_libraries(tester PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
