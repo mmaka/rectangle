@@ -23,4 +23,4 @@ externalproject_add(Nana
 
 externalproject_get_property(Nana SOURCE_DIR BINARY_DIR)
 target_include_directories(intro PRIVATE ${SOURCE_DIR}/include)
-#target_link_libraries(intro PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
+target_link_libraries(intro PRIVATE ${BINARY_DIR}/libnana.so ${NANA_LINKS})
